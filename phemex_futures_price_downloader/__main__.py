@@ -32,7 +32,7 @@ if __name__ == '__main__':
         assets["LastPrice"] = assets["Ticker"].apply(lambda x: exchange.fetch_ticker(x)["last"])
 
         logging.info("Save result to csv")
-        assets.to_csv("data/assets_with_price.csv")
+        assets.to_csv("data/assets_with_price.csv", index=False)
     except:
         logging.exception("Error in application:")
         sys.exit(1)
