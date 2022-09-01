@@ -1,0 +1,5 @@
+include requirements.txt
+include prepare.sh
+include run.sh
+include logger.conf
+include data/assets.csv
