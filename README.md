@@ -1,6 +1,6 @@
-# Phemex futures price downloader
+# Crypto price downloader
 
-Application for downloading current cryptocurrency prices from Phemex exchange defined in Excel for further use in other applications.
+Application for downloading current cryptocurrency prices from exchanges (Phemex, Kucoin) defined in Excel for further use in other applications.
 
 ## How to build
 ```bash
@@ -19,7 +19,8 @@ Application for downloading current cryptocurrency prices from Phemex exchange d
 
 ## How to run
 ```bash
-./run.sh
+./phemex_futures_price_download.sh
+./kucoin_spot_price_download.sh
 ```
 
 ## Technologies
