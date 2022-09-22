@@ -1,5 +1,8 @@
 include requirements.txt
 include prepare.sh
-include run.sh
+include phemex_futures_price_download.sh
+include kucoin_spot_price_download.sh
 include logger.conf
-include data/assets.csv
+include config.yaml
+include data/phemex_futures.csv
+include data/kucoin_spot.csv

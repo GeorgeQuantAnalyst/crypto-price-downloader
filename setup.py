@@ -2,8 +2,8 @@ import os
 
 from setuptools import setup, find_packages
 
-NAME = "phemex-futures-price-downloader"
-DESCRIPTION = "application for downloading futures price from the Phemex exchange."
+NAME = "crypto-price-downloader"
+DESCRIPTION = "Application for downloading current cryptocurrency prices from exchanges (Phemex, Kucoin) defined in Excel for further use in other applications."
 AUTHOR = "PurpleData"
 URL = ""
 
@@ -19,7 +19,7 @@ with open(
 root = os.path.abspath(os.path.dirname(__file__))
 
 if not VERSION:
-    with open(os.path.join(root, "phemex_futures_price_downloader", "__version__.py")) as f:
+    with open(os.path.join(root, "crypto_price_downloader", "__version__.py")) as f:
         exec(f.read(), about)
 else:
     about["__version__"] = VERSION
