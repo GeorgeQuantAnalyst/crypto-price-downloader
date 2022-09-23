@@ -1,7 +1,12 @@
 # Crypto price downloader
 
-Application for downloading current cryptocurrency prices from exchanges (Phemex, Kucoin) defined in Excel for further use in other applications.
+Application for downloading current cryptocurrency prices from exchanges defined in Excel for further use in other applications.
 
+* Supported exchanges:
+  * Phemex
+  * Kucoin
+
+![Example](data/example.png)
 ## How to build
 ```bash
 ./build.sh
