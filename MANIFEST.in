@@ -2,6 +2,7 @@ include requirements.txt
 include prepare.sh
 include phemex_futures_price_download.sh
 include kucoin_spot_price_download.sh
+include binance_spot_price_download.sh
 include logger.conf
 include config.yaml
 include data/phemex_futures.csv
