@@ -6,3 +6,4 @@ include logger.conf
 include config.yaml
 include data/phemex_futures.csv
 include data/kucoin_spot.csv
+include data/binance_spot.csv
