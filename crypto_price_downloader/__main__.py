@@ -28,3 +28,6 @@ if __name__ == '__main__':
 
     if exchange == "KucoinSpot":
         crypto_price_downloader.download_kucoin_spot_price()
+
+    if exchange == "BinanceSpot":
+        crypto_price_downloader.download_binance_spot_price()

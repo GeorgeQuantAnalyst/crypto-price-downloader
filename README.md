@@ -6,7 +6,7 @@ Application for downloading current cryptocurrency prices from exchanges defined
   * Phemex
   * Kucoin
 
-![Example](data/example.png)
+![Example](images/example.png)
 ## How to build
 ```bash
 ./build.sh
