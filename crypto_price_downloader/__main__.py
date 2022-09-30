@@ -31,3 +31,6 @@ if __name__ == '__main__':
 
     if exchange == "BinanceSpot":
         crypto_price_downloader.download_binance_spot_price()
+
+    if exchange == "Okx":
+        crypto_price_downloader.download_okx_spot_price()
