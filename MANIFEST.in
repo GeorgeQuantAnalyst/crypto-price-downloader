@@ -7,8 +7,10 @@ include data/phemex_futures.csv
 include data/kucoin_spot.csv
 include data/binance_spot.csv
 include data/okx_spot.csv
+include data/simplefx_cfd.csv
 
 include phemex_futures_price_download.sh
 include kucoin_spot_price_download.sh
 include binance_spot_price_download.sh
 include okx_spot_price_download.sh
+include simplefx_cfd_price_download.sh

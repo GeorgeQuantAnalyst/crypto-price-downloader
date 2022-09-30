@@ -34,3 +34,6 @@ if __name__ == '__main__':
 
     if exchange == "Okx":
         crypto_price_downloader.download_okx_spot_price()
+
+    if exchange == "SimpleFx":
+        crypto_price_downloader.download_simple_fx_cfd_price()

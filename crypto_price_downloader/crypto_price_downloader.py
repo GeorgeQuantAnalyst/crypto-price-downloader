@@ -4,6 +4,7 @@ import time
 
 import ccxt
 import pandas as pd
+import yfinance as yf
 from ccxt import RateLimitExceeded
 
 
@@ -12,6 +13,7 @@ class CryptoPriceDownloader:
     KUCOIN_SPOT_CSV = "data/kucoin_spot.csv"
     BINANCE_SPOT_CSV = "data/binance_spot.csv"
     OKX_SPOT_CSV = "data/okx_spot.csv"
+    SIMPLEFX_CFD_CSV = "data/simplefx_cfd.csv"
 
     DATE_TIME_FORMATTER = "%d.%m.%Y %X"
 
@@ -102,6 +104,27 @@ class CryptoPriceDownloader:
 
         result.to_csv(self.OKX_SPOT_CSV, index=False)
         logging.info("Finished downloading price for OKx spot")
+
+    def download_simple_fx_cfd_price(self):
+        assets = pd.read_csv(self.SIMPLEFX_CFD_CSV)
+
+        logging.info("Start downloading price for SimpleFx cfd")
+        count_assets = assets.shape[0]
+        result = pd.DataFrame()
+
+        for index, asset in assets.iterrows():
+            try:
+                logging.info("Download - {} ({}/{})".format(asset["Ticker"], index + 1, count_assets))
+                ticker = asset["Ticker"]
+                asset["LastPrice"] = round(yf.Ticker(ticker).history("1d")["Close"][0], 2)
+                asset["UpdateDate"] = datetime.datetime.now().strftime(self.DATE_TIME_FORMATTER)
+                result = pd.concat([result, pd.DataFrame([asset])])
+            except:
+                logging.exception("Problem with download price for: {}".format(asset["Ticker"]))
+                result = pd.concat([result, pd.DataFrame([asset])])
+
+        result.to_csv(self.SIMPLEFX_CFD_CSV, index=False)
+        logging.info("Finished downloading price for SimpleFx cfd")
 
     def __download_last_price(self, ticker, exchange_client):
         while True:
