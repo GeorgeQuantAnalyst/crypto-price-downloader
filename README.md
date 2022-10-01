@@ -1,6 +1,6 @@
 # Crypto price downloader
 
-Application for downloading current cryptocurrencies price from exchanges defined in CSV files.
+Application for downloading current cryptocurrencies price from different exchanges.
 
 * Supported exchanges:
   * Phemex
