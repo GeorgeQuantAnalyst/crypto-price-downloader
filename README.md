@@ -39,3 +39,5 @@ Application for downloading current cryptocurrencies price from exchanges define
 * Pandas
 * CCXT
 * YFinance
+
+[Release notes](RELEASE_NOTES.md)
