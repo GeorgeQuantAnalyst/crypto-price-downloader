@@ -1,6 +1,6 @@
 # Crypto price downloader
 
-Application for downloading current cryptocurrency prices from exchanges defined in Excel for further use in other applications.
+Application for downloading current cryptocurrency prices from exchanges defined in CSV files.
 
 * Supported exchanges:
   * Phemex
@@ -17,7 +17,7 @@ Application for downloading current cryptocurrency prices from exchanges defined
 
 ## How to deploy
 ```
-./deploy.sh
+./deploy.sh ${version}
 ```
 
 ## How to prepare
