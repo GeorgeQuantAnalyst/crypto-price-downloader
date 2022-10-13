@@ -1,1 +1,2 @@
-RateExceedDelaySeconds: 60
+base:
+  rateExceedDelaySeconds: 60
