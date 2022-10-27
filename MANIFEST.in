@@ -3,11 +3,8 @@ include logger.conf
 include config.yaml
 include prepare.sh
 
-include data/phemex_futures.csv
-include data/kucoin_spot.csv
-include data/binance_spot.csv
-include data/okx_spot.csv
-include data/simplefx_cfd.csv
+include data/*
+include images/*
 
 include phemex_futures_price_download.sh
 include kucoin_spot_price_download.sh
