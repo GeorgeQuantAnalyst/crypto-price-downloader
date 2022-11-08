@@ -32,13 +32,13 @@ class CryptoPriceDownloader:
         result = []
         for index, asset in assets.iterrows():
             try:
-                logging.info("Download - {} ({}/{})".format(asset["Ticker"], index + 1, count_assets))
-                ticker = asset["Ticker"]
-                asset["LastPrice"] = self.__download_last_price(ticker, self.phemex_client)
-                asset["UpdateDate"] = datetime.datetime.now().strftime(self.DATE_TIME_FORMATTER)
+                logging.info("Download - {} ({}/{})".format(asset["ticker"], index + 1, count_assets))
+                ticker = asset["ticker"]
+                asset["last_price"] = self.__download_last_price(ticker, self.phemex_client)
+                asset["update_date"] = datetime.datetime.now().strftime(self.DATE_TIME_FORMATTER)
                 result.append(asset.to_dict())
             except:
-                logging.exception("Problem with download price for: {}".format(asset["Ticker"]))
+                logging.exception("Problem with download price for: {}".format(asset["ticker"]))
                 result.append(asset.to_dict())
 
         pd.DataFrame(result).to_csv(self.PHEMEX_FUTURES_CSV, index=False)
