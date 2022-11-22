@@ -34,5 +34,7 @@ if __name__ == '__main__':
             crypto_price_downloader.download_okx_spot_price()
         case "SimpleFx":
             crypto_price_downloader.download_simple_fx_cfd_price()
+        case "BybitFutures":
+            crypto_price_downloader.download_bybit_futures_price()
         case _:
             raise Exception("Not supported exchange - [}".format(exchange))
