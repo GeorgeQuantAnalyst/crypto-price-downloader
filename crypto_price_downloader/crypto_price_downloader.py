@@ -5,7 +5,7 @@ import time
 import ccxt
 import pandas as pd
 import yfinance as yf
-from ccxt import RateLimitExceeded
+from ccxt import RateLimitExceeded, Exchange
 
 
 class CryptoPriceDownloader:
@@ -26,7 +26,7 @@ class CryptoPriceDownloader:
         self.okx_client = ccxt.okx()
         self.bybit_client = ccxt.bybit()
 
-    def download_phemex_futures_price(self):
+    def download_phemex_futures_price(self) -> None:
         assets = pd.read_csv(self.PHEMEX_FUTURES_CSV)
 
         logging.info("Start downloading price for Phemex futures")
@@ -46,7 +46,7 @@ class CryptoPriceDownloader:
         pd.DataFrame(result).to_csv(self.PHEMEX_FUTURES_CSV, index=False)
         logging.info("Finished downloading price for Phemex futures")
 
-    def download_kucoin_spot_price(self):
+    def download_kucoin_spot_price(self) -> None:
         assets = pd.read_csv(self.KUCOIN_SPOT_CSV)
 
         logging.info("Start downloading price for Kucoin spot")
@@ -66,7 +66,7 @@ class CryptoPriceDownloader:
         pd.DataFrame(result).to_csv(self.KUCOIN_SPOT_CSV, index=False)
         logging.info("Finished downloading price for Kucoin spot")
 
-    def download_binance_spot_price(self):
+    def download_binance_spot_price(self) -> None:
         assets = pd.read_csv(self.BINANCE_SPOT_CSV)
 
         logging.info("Start downloading price for Binance spot")
@@ -86,7 +86,7 @@ class CryptoPriceDownloader:
         pd.DataFrame(result).to_csv(self.BINANCE_SPOT_CSV, index=False)
         logging.info("Finished downloading price for Binance spot")
 
-    def download_okx_spot_price(self):
+    def download_okx_spot_price(self) -> None:
         assets = pd.read_csv(self.OKX_SPOT_CSV)
 
         logging.info("Start downloading price for Okx spot")
@@ -107,7 +107,7 @@ class CryptoPriceDownloader:
         pd.DataFrame(result).to_csv(self.OKX_SPOT_CSV, index=False)
         logging.info("Finished downloading price for OKx spot")
 
-    def download_simple_fx_cfd_price(self):
+    def download_simple_fx_cfd_price(self) -> None:
         assets = pd.read_csv(self.SIMPLEFX_CFD_CSV)
 
         logging.info("Start downloading price for SimpleFx cfd")
@@ -128,7 +128,7 @@ class CryptoPriceDownloader:
         pd.DataFrame(result).to_csv(self.SIMPLEFX_CFD_CSV, index=False)
         logging.info("Finished downloading price for SimpleFx cfd")
 
-    def download_bybit_futures_price(self):
+    def download_bybit_futures_price(self) -> None:
         assets = pd.read_csv(self.BYBIT_FUTURES_CSV)
 
         logging.info("Start downloading price for Bybit futures")
@@ -148,7 +148,7 @@ class CryptoPriceDownloader:
         pd.DataFrame(result).to_csv(self.BYBIT_FUTURES_CSV, index=False)
         logging.info("Finished downloading price for Bybit futures")
 
-    def __download_last_price(self, ticker, exchange_client):
+    def __download_last_price(self, ticker: str, exchange_client: Exchange) -> float:
         while True:
             try:
                 return exchange_client.fetch_ticker(ticker)["last"]
