@@ -10,6 +10,7 @@ Application for downloading current cryptocurrencies price from different exchan
   * Bybit
   * SimpleFx
 
+
 ![Example](images/example.png)
 ## How to build
 ```bash
