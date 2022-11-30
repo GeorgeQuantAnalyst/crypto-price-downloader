@@ -1,25 +1,15 @@
 import logging.config
 import sys
 
-from crypto_price_downloader import __version__
+from crypto_price_downloader.constants import LOGGER_CONFIG_FILE_PATH, __logo__, CONFIG_FILE_PATH
 from crypto_price_downloader.crypto_price_downloader import CryptoPriceDownloader
 from crypto_price_downloader.utils import load_config
 
-__logo__ = """
----------------------------------------------------------------------
-crypto-price-downloader {}
----------------------------------------------------------------------
-""".format(__version__.__version__)
-
-CONFIG_FILE_PATH = "config.yaml"
-LOGGER_CONFIG_FILE_PATH = "logger.conf"
-
-# Init
-logging.config.fileConfig(fname=LOGGER_CONFIG_FILE_PATH, disable_existing_loggers=False)
-logging.info(__logo__)
-config = load_config(CONFIG_FILE_PATH)
-
 if __name__ == '__main__':
+    logging.config.fileConfig(fname=LOGGER_CONFIG_FILE_PATH, disable_existing_loggers=False)
+    logging.info(__logo__)
+    config = load_config(CONFIG_FILE_PATH)
+
     crypto_price_downloader = CryptoPriceDownloader(config["base"]["rateExceedDelaySeconds"])
     exchange = sys.argv[1]
 
@@ -34,5 +24,7 @@ if __name__ == '__main__':
             crypto_price_downloader.download_okx_spot_price()
         case "SimpleFx":
             crypto_price_downloader.download_simple_fx_cfd_price()
+        case "BybitFutures":
+            crypto_price_downloader.download_bybit_futures_price()
         case _:
             raise Exception("Not supported exchange - [}".format(exchange))

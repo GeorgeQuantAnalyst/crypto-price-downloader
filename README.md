@@ -7,6 +7,7 @@ Application for downloading current cryptocurrencies price from different exchan
   * Okx
   * Binance
   * Kucoin
+  * Bybit
   * SimpleFx
 
 ![Example](images/example.png)
@@ -31,6 +32,7 @@ Application for downloading current cryptocurrencies price from different exchan
 ./kucoin_spot_price_download.sh
 ./binance_spot_price_download.sh
 ./okx_spot_price_download.sh
+./bybit_futures_price_download.sh
 ./simplefx_cfd_price_download.sh
 ```
 

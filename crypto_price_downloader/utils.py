@@ -3,7 +3,7 @@ import logging
 import yaml
 
 
-def load_config(file_path):
+def load_config(file_path: str) -> dict:
     try:
         with open(file_path, 'r') as stream:
             return yaml.safe_load(stream)
