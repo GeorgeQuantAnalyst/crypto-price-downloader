@@ -1,5 +1,19 @@
 # Release notes
 
+## Version 2.0.2
+Available since: 30.11.2022
+
+```
+Improvement
+```
+* [fef45f6](https://github.com/GeorgeQuantAnalyst/crypto-price-downloader/commit/fef45f64a334098a7164bc7b14698b3725db3159) - Added support for futures on Bybit exchange
+
+
+```
+Bug
+```
+* [c22b625](https://github.com/GeorgeQuantAnalyst/crypto-price-downloader/commit/c22b625f2dc8a188c3587216e2ce6bb608cb8773) - Update ticker for Phemex futures and small refactoring
+
 ## Version 2.0.1
 Available since: 27.10.2022
 
